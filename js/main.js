@@ -7,6 +7,7 @@ createApp ({
         return {
             search: "",
             contactIndex: 0,
+            searchQuery:"",
             contacts: [
                 {
                     name: 'Michele',
@@ -207,6 +208,15 @@ createApp ({
                     status: 'received'
                 },
             );
+        },
+        search(num){
+            nome = this.contacts[num].name.toLowerCase();
+
+            if (nome.includes(this.searchQuery)) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 }).mount("#app");

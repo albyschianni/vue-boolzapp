@@ -56,21 +56,32 @@
                 <div class="search-chat">
                     <div class="search-container">
                         <label id="label-search" for="chat-research"><i class="fa-solid fa-magnifying-glass search-2"></i></label>
-                        <input id="chat-research" type="text" placeholder=" Cerca o inizia una nuova chat">
+                        <input id="chat-research" type="text" placeholder=" Cerca o inizia una nuova chat" v-model="searchQuery">
                     </div>
                     
                 </div>
 
-                <div class="chat-container" v-for="(contact, index) in contacts" @click="selectChat(index)" :class="contactIndex === index ? 'active' : ''">
-                    <div class="chat">
-                        <img class="img-profile" :src="contact.avatar" alt="">
-                        <div id="username-chat">
-                            <div>{{contact.name}}</div>
-                            <div>Ultimo accesso ieri in teoria</div>
+                <template v-for="(contact, index) in contacts">
+
+                    <div class="chat-container"  @click="selectChat(index)" :class="contactIndex === index ? 'active' : ''" v-if="search(index)">
+                        <div class="chat">
+                            <img class="img-profile" :src="contact.avatar" alt="">
+                            <div id="username-chat">
+                                <div>{{contact.name}}</div>
+                                <div>Ultimo accesso ieri in teoria</div>
+                            </div>
                         </div>
+                    
                     </div>
+
+                </template>
+
                 
-                </div>
+
+
+
+
+
             </div>
 
             <div class="right-bar">
