@@ -63,7 +63,7 @@
 
                 <template v-for="(contact, index) in contacts">
 
-                    <div class="chat-container"  @click="selectChat(index)" :class="contactIndex === index ? 'active' : ''" v-if="search(index)">
+                    <div class="chat-container"  @click="selectChat(index)" :class="contactIndex === index ? 'active' : ''" v-if="searchChat(index)">
                         <div class="chat">
                             <img class="img-profile" :src="contact.avatar" alt="">
                             <div id="username-chat">

@@ -209,7 +209,7 @@ createApp ({
                 },
             );
         },
-        search(num){
+        searchChat(num){
             nome = this.contacts[num].name.toLowerCase();
 
             if (nome.includes(this.searchQuery)) {
