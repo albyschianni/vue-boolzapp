@@ -139,10 +139,10 @@ body {
 .message-container {
     width: 80%;
     margin: 20px auto;
-    display: none;
+    
 }
 .active {
-  display: block;
+  background-color: lightgray;
 }
 /* .sent {
     display: flex;

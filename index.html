@@ -61,7 +61,7 @@
                     
                 </div>
 
-                <div class="chat-container" v-for="(contact, index) in contacts" @click="selectChat">
+                <div class="chat-container" v-for="(contact, index) in contacts" @click="selectChat(index)" :class="contactIndex === index ? 'active' : ''">
                     <div class="chat">
                         <img class="img-profile" :src="contact.avatar" alt="">
                         <div id="username-chat">
@@ -77,7 +77,7 @@
 
                 <div class="message-container">
                     
-                    <div v-for="(message, index) in contacts[contactIndex].messages" :class="contactIndex === activeUser ? 'active' : ''">
+                    <div v-for="(message, index) in contacts[contactIndex].messages" >
                         <div :class="message.status">
                             {{message.message}}
                         </div>
