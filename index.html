@@ -18,8 +18,8 @@
         <div class="top-bar">
             
             <div class="left-top-bar">
-                <img class="img-profile" src="img/avatar_1.jpg" alt="">
-                <span id="username">Nome Utente da sostituire</span>
+                <img class="img-profile" src="img/avatar_2.jpg" alt="">
+                <span id="username">Alby Schianni</span>
                 <div>
                     <i class="fa-solid fa-circle-notch"></i>
                     <i class="fa-solid fa-message"></i>                   
@@ -61,12 +61,12 @@
                     
                 </div>
 
-                <div class="chat-container">
+                <div class="chat-container" v-for="(contact, index) in contacts" @click="selectChat">
                     <div class="chat">
-                        <img class="img-profile" src="img/avatar_2.jpg" alt="">
+                        <img class="img-profile" :src="contact.avatar" alt="">
                         <div id="username-chat">
-                            <div>Nome Utente da sostituire</div>
-                            <div>ultimo accesso</div>
+                            <div>{{contact.name}}</div>
+                            <div>Ultimo accesso ieri in teoria</div>
                         </div>
                     </div>
                 
@@ -74,6 +74,20 @@
             </div>
 
             <div class="right-bar">
+
+                <div class="message-container">
+                    
+                    <div v-for="(message, index) in contacts[contactIndex].messages" :class="contactIndex === activeUser ? 'active' : ''">
+                        <div :class="message.status">
+                            {{message.message}}
+                        </div>
+                    </div>
+                   
+                    
+                </div>
+                
+
+
 
                 <div class="bottom-bar">
                     <div class="emoji">

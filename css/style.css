@@ -134,6 +134,52 @@ body {
     align-items: flex-start;
 }
 
+/* MESSAGES CHAT */
+
+.message-container {
+    width: 80%;
+    margin: 20px auto;
+    display: none;
+}
+.active {
+  display: block;
+}
+/* .sent {
+    display: flex;
+    justify-content: end;
+} */
+.sent {
+    background-color: #d5f9ba;
+    width: 250px;
+    height: 50px;
+    border-radius: 6px;
+    padding: 10px;
+    margin-left: auto;
+    margin-bottom: 10px;
+    
+}
+.main-text-sent {
+    width: 80%;
+    
+}
+.main-text-received {
+    width: 80%;
+}
+.message-time {
+    display: flex;
+    justify-content: flex-end;
+}
+.received {
+    background-color: #ffffff;
+    width: 250px;
+    height: 50px;
+    border-radius: 6px;
+    /* display: flex;
+    align-items: center; */
+    padding: 10px;
+}
+
+
 /* BOTTOM PART - MESSAGE */
 
 .bottom-bar {
