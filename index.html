@@ -29,8 +29,8 @@
 
             <div class="right-top-bar" >
                 <img class="img-profile" src="img/avatar_1.jpg" alt="">
-                <div id="username-chat">
-                    <div>Nome Utente da sostituire</div>
+                <div id="username-chat" v-model="contactIndex">
+                    <div>{{contacts[contactIndex].name}}</div>
                     <div>ultimo accesso</div>
                 </div>
                 <div>
@@ -68,7 +68,7 @@
                             <img class="img-profile" :src="contact.avatar" alt="">
                             <div id="username-chat">
                                 <div>{{contact.name}}</div>
-                                <div>Ultimo accesso ieri in teoria</div>
+                                <div></div>
                             </div>
                         </div>
                     
